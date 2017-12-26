@@ -1,0 +1,13 @@
+<!--pages/component/page/feedback/feedback.wxml-->
+<view class='container-2'>
+  <form bindsubmit="formSubmit">
+    <view class='page-textarea'>
+      <textarea class='textarea' name="textarea" placeholder="您寶貴的意見和反饋對我們很重要" placeholder-style='color:#ccc;'></textarea>  
+    </view>
+    <view class='page-btn'>
+      <button class='btn' formType="submit">提交</button>  
+    </view>
+  </form>
+<!-- 弹窗提示 -->  
+  <modal class="success-modal" title="{{title}}"  hidden="{{modalHidden}}" confirm-text="确定" no-cancel="true" bindconfirm="modalBindaconfirm" bindtap='reback'>{{tips}}</modal>
+</view>

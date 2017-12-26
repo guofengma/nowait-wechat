@@ -1,0 +1,16 @@
+<!--user.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block>
+      <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{nickName}}</text>
+    </block>
+  </view>
+  <view class="user-list">
+  <view class='user-list-item' id='{{ item.id }}' wx:for-items="{{ list }}" wx:key="key" bindtap='navto'>
+  <text class='user-list-text'>{{ item.text }}</text>
+  <text>{{ item.name }}</text>
+  <image src='{{ item.more }}' class='user-list-more'></image>
+  </view>
+  </view>
+</view>

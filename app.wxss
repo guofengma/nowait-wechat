@@ -1,0 +1,65 @@
+/**app.wxss**/
+page{
+  display: block;
+  min-height: 100%;
+  background-color: #f4f4f4;
+  letter-spacing: 5rpx;
+}
+.list{
+  background-color: #fff;
+  width: 100%;
+  font-size: 25rpx;
+  display: inline-flex;
+  margin-bottom: 30rpx;
+  
+}
+.list-img{
+  width: 200rpx;
+  height: 200rpx;
+}
+.list-img-border{
+  text-align: center;
+  /* border: 2rpx solid #f4f4f4; */
+  margin-top: 31rpx;
+  margin-left: 15rpx;
+  padding: 10rpx 5rpx 5rpx 5rpx;
+  border-radius: 10rpx;
+}
+.list-img image{
+  margin: 0 auto;
+  width: 170rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #f4f4f4;
+}
+.list-msg{
+  margin: 38rpx 0rpx 0rpx 21rpx;
+  line-height: 45rpx;
+}
+.list-msg-name{
+  display: block;
+  font-size: 38rpx;
+  color: #000;
+}
+.list-msg image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.list-msg-sn{
+  margin-top: 10rpx;
+}
+.list-msg-distance{
+  display: block;
+  font-size: 26rpx;
+  color: rgb(169, 169, 169);
+}
+.list-msg-state{
+  font-size: 26rpx;
+}
+.list-msg-now{
+  font-size: 26rpx;
+  position: absolute;
+  float: right;
+  right: 30rpx;
+  color: red;
+}

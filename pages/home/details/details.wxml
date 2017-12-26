@@ -1,0 +1,121 @@
+<!--pages/component/page/details/details.wxml-->
+<view class='container-2'>
+  <view class='head'>
+    <swiper indicator-dots="true"
+      autoplay="true" interval="2000" duration="500">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+            <image class='head-image' mode='aspectFill' src='{{item}}'/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='head-name'>
+      <label class='name'>{{restaurant.name}}</label>
+      <view class='head-name-bottom'>
+        <label class='star'><image class='star-img' mode='aspectFit' src='{{star}}'/></label>
+        <label class='cuisine'>{{restaurant.priceInfo}}￥/人</label>
+      </view>
+    </view>
+  </view>
+
+  <view class='page-main'>
+    <view wx:if="{{restaurant.waitTableSum == 0}}" class='page-main-none'>
+      <label wx:if="{{restaurant.status == '當前排隊狀況'}}">餐廳當前無需排隊</label>
+      <label wx:else>餐廳當前暫停取號</label>
+    </view>
+    <view wx:else class='page-main-someone'>
+      <view class='table-head'>
+        <text class='table-head-list'>座位類型</text>
+        <text class='table-head-list'>等待桌數</text>
+        <text class='table-head-list'>預計時間</text>
+      </view>
+      <view class='table-main'>
+        <view wx:if="{{restaurant.desks[0] != null}}" class='table-small'>
+          <text class='table-main-list-first'>{{restaurant.desks[0].style}}
+          <text class='people'>{{restaurant.desks[0].info}}</text></text>
+          <text class='table-main-list'><text class='red'>{{restaurant.desks[0].waitTableSum}}</text>桌</text>
+          <text class='table-main-list'>{{waitTime[0]}}</text>
+        </view>
+        <view wx:else class='table-small'>
+          <text class='table-main-list-first'>--
+          <text class='people'></text></text>
+          <text class='table-main-list'><text class='red'></text>--</text>
+          <text class='table-main-list'>--</text>
+        </view>
+        
+        <view wx:if="{{restaurant.desks[1] != null}}" class='table-medium'>
+          <text class='table-main-list-first'>{{restaurant.desks[1].style}}
+          <text class='people'>{{restaurant.desks[1].info}}</text></text>
+          <text class='table-main-list'><text class='red'>{{restaurant.desks[1].waitTableSum}}</text>桌</text>
+          <text class='table-main-list'>{{waitTime[1]}}</text>
+        </view>
+        <view wx:else class='table-medium'>
+          <text class='table-main-list-first'>--
+          <text class='people'></text></text>
+          <text class='table-main-list'><text class='red'></text>--</text>
+          <text class='table-main-list'>--</text>
+        </view>
+
+        <view wx:if="{{restaurant.desks[2] != null}}" class='table-large'>
+          <text class='table-main-list-first'>{{restaurant.desks[2].style}}
+          <text class='people'>{{restaurant.desks[2].info}}</text></text>
+          <text class='table-main-list'><text class='red'>{{restaurant.desks[2].waitTableSum}}</text>桌</text>
+          <text class='table-main-list'>{{waitTime[2]}}</text>
+        </view>
+        <view wx:else class='table-large'>
+          <text class='table-main-list-first'>--
+          <text class='people'></text></text>
+          <text class='table-main-list'><text class='red'></text>--</text>
+          <text class='table-main-list'>--</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='foot'>
+    <view class='foot-address'>
+      <image class='foot-address-img' mode='aspectFit' src='/pages/images/address.png'/>
+      <label class='foot-address-name'>{{restaurant.address}}</label>
+      <label class='foot-address-distance'>{{restaurant.distance}}KM</label>
+    </view>
+    <view class='foot-telephone' bindtap="callphone">
+      <image class='foot-telephone-img' mode='aspectFit' src='/pages/images/telephone.png'/>
+      <label class='foot-telephone-namber'>{{restaurant.phone}}</label>
+      <label class='foot-telephone-more'>〉</label>
+    </view>
+    <view class='foot-time'>
+      <label class='foot-time-text'>營業時間：</label>
+      <label class='foot-time-period'>{{restaurant.shopTime}}</label>
+    </view>
+  </view>
+
+  <view wx:if="{{restaurant.waitTableSum > 0}}" class='page-line'>
+    <button class='page-line-btn' type='primary' bindtap="getnamber">取號¥2</button>  
+  </view>
+
+  <!--電話下拉菜單-->
+  <action-sheet class="phone-sheet" hidden="{{callphoneHidden}}" bindchange="listenerCallphone" >
+
+    <block> 
+        <action-sheet-item >{{telephone}}</action-sheet-item>
+    </block>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+</action-sheet>
+
+  <!--人數選擇下拉菜單-->
+  <action-sheet class="getnamber-sheet" hidden="{{getnamberHidden}}" bindchange="listenerGetnamber" >
+  <view class='choose'>選擇就餐人數</view>
+  <scroll-view class="getnamber-block" scroll-y="true">
+    <view wx:for="{{peoplenumberItems}}" wx:key="key"> 
+      <action-sheet-item class="number" bindtap="oppenPay" id="{{item}}">{{item}}</action-sheet-item>
+    </view>
+  </scroll-view>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+</action-sheet>
+<!--
+  <modal class="success-modal" title="取號成功" hidden="{{modalHidden}}" confirm-text="确定" no-cancel="true" bindconfirm="modalBindaconfirm">您當前的號碼是{{num}}</modal>
+-->
+
+</view>

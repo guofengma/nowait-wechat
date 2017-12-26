@@ -1,0 +1,29 @@
+<!--pages/template/template.wxml-->
+  <template name="myList">
+    <view class='list' data-y='{{idy}}' id='{{idx}}' bindtap='oppenDetails'>
+      <view class='list-img'>
+        <view class='list-img-border'>
+          <image src='{{coverPic}}'></image>
+        </view>
+        
+      </view>
+      <view class='list-msg'>
+        <text class='list-msg-name'>{{name}}</text>
+        <text class='list-msg-distance'>距離{{distance}}km</text>
+        <view class='list-msg-sn'>
+          <block wx:if="{{waitTableSum > 0}}">
+            <text class='list-msg-state'>前方正在等待</text>
+            <text class='list-msg-now'>{{waitTableSum}}桌</text>
+          </block>
+          <block wx:elif="{{status == '當前排隊狀況'}}">
+            <text class='list-msg-state'>當前排隊狀況</text>
+            <text class='list-msg-now'>無需排隊</text>
+          </block>
+          <block wx:else>
+            <text class='list-msg-state'>{{status}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+  </template>
+  <template is="myList" data="{{...item}}"></template>

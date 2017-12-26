@@ -1,0 +1,21 @@
+<!--pages/user/myNum/myNum.wxml-->
+<view class='container' >
+  <view class='myNum' wx:if="{{name != ''}}">
+    <view class='myNum-box1'>
+      <view class='myNum-name'>{{ name }}</view>
+      <view class='myNum-date'>{{ date }}</view>
+      <view class='myNum-YorN'>{{ YorN }}</view>
+    </view>
+    <view class='myNum-box2'>
+      <view class='myNum-least'>前面還有<text class='red'>{{ least }}</text>桌</view>
+      <view class='myNum-number'>{{ number }}</view>
+      <view class='myNum-time'>預估時間<text class='red'>{{ time }}</text>分鐘</view>
+    </view>
+    <view class='myNum-box3'>
+      <view class='myNum-tips'>聽到叫號請到迎賓臺</view>
+      <button class='myNum-cancel' type='warn' bindtap='cancelOrder'>取消排隊</button>
+    </view>
+  </view>
+  <!--彈窗-->
+  <modal class="success-modal" title="取消訂單" hidden="{{modalHidden}}" confirm-text="确定" no-cancel="true"  bindconfirm="modalBindaconfirm" bindtap='reback'>{{text}}</modal>
+</view>

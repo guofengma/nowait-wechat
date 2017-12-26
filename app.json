@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/home/details/details",
+    "pages/home/pay/pay",
+    "pages/home/search/search",
+    "pages/home/branch/branch",
+    "pages/user/user",
+    "pages/user/myNum/myNum",
+    "pages/user/phone/phone",
+    "pages/logs/logs",
+    "pages/user/contact/contact",
+    "pages/user/feedback/feedback",
+    "pages/template/template",
+    "pages/home/search/restaurants/restaurants"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e9ae3a",
+    "navigationBarTitleText": "排隊不用等",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "color": "#a4a4a5",
+    "selectedColor": "#e9ae3a",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首頁",
+        "iconPath": "pages/images/home.png",
+        "selectedIconPath": "pages/images/home_hl.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "pages/images/user.png",
+        "selectedIconPath": "pages/images/user_hl.png"
+      }
+    ]
+  }
+}

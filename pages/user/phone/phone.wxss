@@ -1,0 +1,46 @@
+/* pages/user/phone/phone.wxss */
+.box{
+  background-color: #fff;
+}
+.btn1{
+}
+.text-item{
+  background-color: #fff;
+  border-bottom: 1rpx solid #e7e7e7;
+  padding: 27rpx 0rpx 27rpx 30rpx;
+  letter-spacing: 0rpx;
+  font-size: 36rpx;
+}
+.pl-class{
+  color: #cecece;
+}
+.msg-code{
+  background-color: #fff;
+  font-size: 32rpx;
+  width: 280rpx;
+  height: 85rpx;
+  margin-right: 30rpx;
+  margin-top: 9rpx;
+  color: #e9ae3a;
+  border: 2rpx solid #e9ae3a;
+  position: relative;
+  float: right;
+}
+.msg-codeCount{
+  background-color: #fff;
+  font-size: 32rpx;
+  width: 280rpx;
+  height: 85rpx;
+  margin-right: 30rpx;
+  margin-top: 9rpx;
+  color: #e9ae3a;
+  border: 2rpx solid #e9ae3a;
+  position: relative;
+  float: right;
+  padding-left: 23rpx;
+}
+.complete{
+  margin-top: 30rpx;
+  width: 90%;
+  font-size: 36rpx;
+}

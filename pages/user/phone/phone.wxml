@@ -1,0 +1,10 @@
+<!--pages/user/phone/phone.wxml-->
+<view class='container'>
+<view class='box'>
+  <input class='text-item btn1' type='number' placeholder-class='pl-class' placeholder='請輸入手機號碼' bindinput='phoneKeyInput' value='{{phone}}' maxlength='11' auto-focus='true'></input>
+  <button class='msg-code' hidden='{{selected ? true : false}}' bindtap='getmsgCode'>獲取驗證碼</button>
+  <button class='msg-codeCount' bindtap='' hidden='{{selected1 ? true : false}}'>重新獲取  {{ second }}s</button>
+  <input class='text-item' type='number' placeholder-class='pl-class' placeholder='請輸入驗證碼' bindinput='codeKeyInput' value='{{code}}'></input>
+</view>
+  <button class='complete' type='primary' size='default' bindtap='addBtn'>完成</button>
+</view>

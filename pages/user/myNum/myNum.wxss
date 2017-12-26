@@ -1,0 +1,64 @@
+/* pages/user/myNum/myNum.wxss */
+.red{
+  color: red;
+}
+.myNum-box1{
+  background-color: #fff;
+  padding: 44rpx 0rpx 40rpx 30rpx;
+  border-bottom: 1rpx solid #e7e7e7;
+}
+.myNum-name{
+  font-size: 34rpx;
+  margin: 0rpx 0rpx 34rpx 0rpx;
+}
+.myNum-date{
+  font-size: 26rpx;
+  color: #b4b4b4;
+  display: inline-flex;
+}
+.myNum-YorN{
+  color: #7cd57c;
+  display: inline-flex;
+  position: relative;
+  float: right;
+  right: 30rpx;
+  bottom: 40rpx;
+}
+.myNum-box2{
+  background-color: #fff;
+  /* padding: 28px 0rpx 27rpx 30rpx; */
+}
+.myNum-least{
+  width: 400rpx;
+  padding: 28rpx 0rpx 27rpx 30rpx;
+  border-bottom: 1rpx solid #e7e7e7;
+}
+.myNum-time{
+  padding: 28rpx 0rpx 27rpx 30rpx;
+  border-bottom: 1rpx solid #e7e7e7;
+}
+.myNum-number{
+  position: relative;
+  float: right;
+  right: 30rpx;
+  bottom: 50rpx;
+  font-size: 56rpx;
+  color: #09bb07;
+}
+.myNum-box3{
+  background-color: #fff;
+}
+.myNum-tips{
+  padding: 35rpx 0rpx 27rpx 30rpx;
+  border-bottom: 1rpx solid #e7e7e7;
+  color: #A5A5A5;
+  font-size: 26rpx;
+}
+.myNum-cancel{
+  font-size: 26rpx;
+  width: 230rpx;
+  position: relative;
+  float: right;
+  right: 30rpx;
+  bottom: 86rpx;
+}

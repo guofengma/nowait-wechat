@@ -1,0 +1,26 @@
+<!--pages/home/pay/pay.wxml-->
+<view class='container'>
+  <view class='page-head'>請在<text class='countdown'>{{countdown}}</text>内完成支付</view>
+  <view class='page-name'>
+    <view class='page-name-left'>
+      <view class='page-name-name'>{{restName}}</view>
+      <view class='page-name-people'>人數{{numberOfPeople}}人</view>
+    </view>
+    <view class='page-name-right-price'>¥{{price}}</view>
+  </view>
+
+  <view class='text-box'>
+    <view class='text-list'><text class='point'>●</text>爲避免綫上隨意取號影響正常排隊秩序，排隊不用等向您收取2元綫上服務費。</view>
+    <view class='text-list'><text class='point'>●</text>付費后，過號不作廢，順延三桌就餐。</view>
+    <view class='text-list'><text class='point'>●</text>取號成功后，到號請取消服務費將退款，過號或就餐，服務費不退款。</view>
+    <view class='text-list'><text class='point'>●</text>預估等位時間僅供參考，留意叫號進度以免過號。有任何疑問，請聯係排隊等官方客服（010）1234-1234。</view>
+  </view>
+
+  <view class='page-foot'>
+    <view class='payPrice'>支付金額<text class='payPrice-price'>¥{{price}}</text></view>
+    <view class='paybut'></view>
+    <button class='paybut-but' bindtap='oppensuccess'>確認支付</button>
+  </view>
+  <!--彈窗-->
+  <modal class="success-modal" title="{{title}}" hidden="{{modalHidden}}" confirm-text="确定" no-cancel="true" bindconfirm="modalBindaconfirm" bindtap='reback'>{{text}}</modal>
+</view>

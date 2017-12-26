@@ -1,0 +1,14 @@
+/* pages/component/page/feedback/feedback.wxss */
+.textarea{
+  height:300rpx;
+  width: 690rpx;
+  background-color: #fff;
+  padding: 30rpx;
+  font-size: 34rpx;
+  letter-spacing: 4rpx;
+}
+.btn{
+  height: 88rpx;
+  width: 690rpx;
+  margin-top: 30rpx;
+}

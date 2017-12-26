@@ -1,0 +1,83 @@
+/* pages/home/pay/pay.wxss */
+.page-head{
+  width: 100%;
+  height: 68rpx;
+  background-color: #F5DDD0;
+  text-align: center;
+  line-height: 68rpx;
+  font-size: 26rpx;
+  color: rgb(142, 142, 147);
+}
+.countdown{
+  color: red;
+}
+.page-name{
+  height: 182rpx;
+  width: 100%;
+  background-color: #fff;
+}
+.page-name-left{
+  float: left;
+  padding-left: 30rpx;
+  padding-top: 42rpx;
+}
+.page-name-name{
+  font-size: 34rpx;
+  padding-bottom: 25rpx;
+}
+.page-name-people{
+  color: rgb(169, 169, 169);
+  font-size: 26rpx;
+}
+.page-name-right-price{
+  float: right;
+  line-height: 182rpx;
+  color: rgb(232, 67, 64);
+  font-size: 50rpx;
+  padding-right: 30rpx;
+}
+.text-box{
+  padding: 30rpx 69rpx 0 54rpx;
+  color: rgb(169, 169, 169);
+  font-size: 24rpx;
+  line-height: 39rpx;
+}
+.point{
+  position: relative;
+  right: 24rpx;
+}
+.page-foot{
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  border-top:1rpx #c9c9c9 solid; 
+  padding-top: 14rpx;
+  position: absolute;
+  bottom: 0rpx;
+
+}
+.payPrice{
+  float: left;
+  color: rgb(102, 102, 102);
+  font-size: 30rpx;
+  padding-top:24rpx;
+  padding-left: 30rpx;
+}
+.payPrice-price{
+  color: rgb(232, 67, 64);
+  font-size: 37rpx;
+}
+.paybut{
+
+}
+.paybut-but{
+  width: 255rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  background-color: rgb(232, 67, 64);
+  color: #fff;
+  float: right;
+  position: relative;
+  right: 30rpx;
+  top: 10rpx;
+}

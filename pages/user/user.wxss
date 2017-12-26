@@ -1,0 +1,41 @@
+/**user.wxss**/
+.userinfo {
+  background-color: #fff;
+  padding: 10rpx;
+  margin: 0 auto;
+}
+
+.userinfo-avatar {
+  vertical-align: middle;
+  width: 130rpx;
+  height: 130rpx;
+  margin: 21rpx;
+  margin-right: 26rpx;
+  border-radius: 10%;
+}
+.userinfo-nickname {
+  font-size: 36rpx;
+}
+.user-list{
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+.user-list-item{
+  padding: 28rpx;
+  font-size: 34rpx;
+  font-weight: 500rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.user-list-more{
+  position: absolute;
+  float: right;
+  right: 30rpx;
+  width: 20rpx;
+  height: 30rpx;
+}
+.user-list-text{
+  position: absolute;
+  color: lightgray;
+  float: right;
+  right: 30rpx;
+}

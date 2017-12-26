@@ -1,0 +1,7 @@
+<!--pages/home/branch/branch.wxml-->
+<import src="../../template/template" />
+<view class='container'>
+  <view wx:for="{{restaurants}}" wx:for-item="restaurant" wx:for-index="idx" wx:key="key">
+    <template is="myList" data="{{...restaurant, idx}}"></template>
+  </view>
+</view>

@@ -1,0 +1,52 @@
+<!--index.wxml-->
+ <import src="../template/template" /> 
+<view class="container">
+  <view class='top' id='searchBar' bindtap='searchBar'>
+    <image src='/pages/images/SearchBar.png'></image>
+    <!-- <view class='search'>
+      <image src='/pages/images/search.png'></image>
+      <text>搜索</text> -->
+    <!-- </view> -->
+  </view>
+  <view class='hot'>
+    <view class='top-text'>
+      <image src='/pages/images/hot.png'></image>
+      <text class='title-model'>連鎖店</text>
+    </view>
+        <view class='hot-grid'>
+          <view class='hot-grid-list' wx:for="{{[0, 1, 2]}}" wx:for-item="i" wx:key="key" id="{{i}}" bindtap='branch'>
+            <view class='hot-grid-img'>
+              <image src='{{chainShops[i].pic}}' class='hot-list-img'></image>
+            </view>
+            <text class='hot-grid-text'>{{chainShops[i].name}}</text>
+          </view>
+        </view>
+        <view class='hot-grid'>
+          <view class='hot-grid-list' wx:for="{{[3, 4, 5]}}" wx:for-item="i" wx:key="key" id="{{i}}" bindtap='branch'>
+            <view class='hot-grid-img'>
+              <image src='{{chainShops[i].pic}}' class='hot-list-img'></image>
+            </view> 
+            <text class='hot-grid-text'>{{chainShops[i].name}}</text>
+          </view>
+        </view>
+  </view>
+  <view class='nearby'>
+    <view class='top-text'>
+      <image src='/pages/images/nearby.png'></image>
+      <text class='title-model'>附近的餐廳</text>
+    </view>
+    <view class='nearby-btnbox'>
+      <view url='' class="{{selectedBtn1 ? 'nearby-btnbox-btnSelected':'nearby-btnbox-btn'}}" bindtap='selected1'>可手機取號</view>
+      <view url='' class="{{selectedBtn2 ? 'nearby-btnbox-btnSelected':'nearby-btnbox-btn'}}" bindtap='selected2'>過號不作廢</view>
+    </view>
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" bindscrolltolower="onReachBottom" style='height: {{scrollHeight}}px;' bindscroll="scroll">
+      <view wx:for="{{restaurants}}" wx:for-item="restaurant" wx:for-index="idx" wx:key="key">
+        <template is="myList" data="{{...restaurant, idx}}"></template>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='footer'>
+    <text hidden='{{hasNext}}'>沒有更多了</text>
+    <text hidden='{{!hasNext}}'>加載中</text>
+  </view>
+</view>
