@@ -20,7 +20,7 @@
 
   <view class='page-main'>
     <view wx:if="{{restaurant.waitTableSum == 0}}" class='page-main-none'>
-      <label wx:if="{{restaurant.status == '當前排隊狀況'}}">餐廳當前無需排隊</label>
+      <label wx:if="{{restaurant.status == '當前排隊狀況' || restaurant.status == '前方正在等待'}}">餐廳當前無需排隊</label>
       <label wx:else>餐廳當前暫停取號</label>
     </view>
     <view wx:else class='page-main-someone'>

@@ -4,8 +4,8 @@ var app = Page({
    * 页面的初始数据
    */
   data: {
-    url: 'http://120.78.182.217',
-    // url: 'http://localhost:8080',
+    // url: 'http://120.78.182.217',
+    url: 'http://localhost:8080',
     scrollTop: 0,
     restaurants: [],
     start: 0,
