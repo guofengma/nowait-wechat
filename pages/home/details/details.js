@@ -137,13 +137,20 @@ Page({
    * 計算餐廳座位最大人數
    */
   calculateDeskMaxPeople: function (desks) {
-    var desk = desks[desks.length - 1];
-    desk.info = desk.info.replace("人", "");
-    var maxPeople = desk.info.split("-")[1];
     var peoplenumberItems = [];
-    for (var i = 0; i < maxPeople; i++) {
-      peoplenumberItems[i] = i + 1;
+    var index = 0;
+    var desk, minPeople, maxPeople;
+    for (var i = 0; i < desks.length; i++) {
+      desk = desks[i];
+      desk.info = desk.info.replace("人", "");
+      minPeople = desk.info.split("-")[0];
+      maxPeople = desk.info.split("-")[1];
+      for (var j = minPeople; j <= maxPeople; j++) {
+        peoplenumberItems[index] = parseInt(j);
+        index++;
+      }
     }
+    console.log(peoplenumberItems);
     this.setData({
       peoplenumberItems: peoplenumberItems
     })
