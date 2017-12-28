@@ -11,7 +11,7 @@
         <text class='list-msg-name'>{{name}}</text>
         <text class='list-msg-distance'>距離{{distance}}km</text>
         <view class='list-msg-sn'>
-          <block wx:if="{{waitTableSum > 0}}">
+          <block wx:if="{{status == '前方正在等待'}}">
             <text class='list-msg-state'>前方正在等待</text>
             <text class='list-msg-now'>{{waitTableSum}}桌</text>
           </block>
