@@ -1,8 +1,6 @@
 <import src="../../../template/template" />
 <view class='container'>
-  <view wx:for="{{chainShops}}" wx:for-item="chainShop" wx:key="key" wx:for-index="idy">
-    <view wx:for="{{chainShop.restaurants}}" wx:for-item="restaurant" wx:for-index="idx" wx:key="key">
-      <template is="myList"  data="{{...restaurant, idx, idy}}"></template>
-    </view>
+  <view wx:for="{{restaurants}}" wx:for-item="restaurant" wx:for-index="idx" wx:key="key">
+    <template is="myList"  data="{{...restaurant, idx}}"></template>
   </view>
 </view>

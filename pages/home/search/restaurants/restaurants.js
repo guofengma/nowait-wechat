@@ -14,8 +14,7 @@ Page({
   oppenDetails: function (e) {
     var that = this;
     var restIdx = e.currentTarget.id;
-    var chainIdx = e.currentTarget.dataset.y;
-    var restaurant = JSON.stringify(that.data.chainShops[chainIdx].restaurants[restIdx]);  // 餐廳對象
+    var restaurant = JSON.stringify(that.data.restaurants[restIdx]);  // 餐廳對象
     // 跳轉至餐廳詳情信息頁面
     wx.navigateTo({
       url: "/pages/home/details/details?restaurant=" + restaurant,
@@ -26,9 +25,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var chainShops = JSON.parse(options.chainShops);
+    var restaurants = JSON.parse(options.restaurants);
     this.setData({
-      chainShops: chainShops
+      restaurants: restaurants
     })
   },
 

@@ -7,7 +7,7 @@ Page({
   data: {
     modalHidden: true,
     tips: '搜索內容為空',
-    chainShops: null
+    restaurants: null
   },
 
   /**
@@ -24,22 +24,22 @@ Page({
    */
   toRests: function () {
     var that = this;
-    var chainShops = that.data.chainShops;
+    var restaurants = that.data.restaurants;
     var value = this.data.value;
     if (value == null || value == "") {
       that.setData({
         tips: '請輸入關鍵詞',
         modalHidden: false
       })
-    } else if (chainShops == null || chainShops.length == 0) {
+    } else if (restaurants == null || restaurants.length == 0) {
       that.setData({
         tips: '所搜索的餐廳不存在',
         modalHidden: false
       })
     } else {
-      chainShops = JSON.stringify(chainShops);
+      restaurants = JSON.stringify(restaurants);
       wx.navigateTo({
-        url: 'restaurants/restaurants?chainShops=' + chainShops,
+        url: 'restaurants/restaurants?restaurants=' + restaurants,
       })
     }
   },
@@ -90,7 +90,7 @@ Page({
     var _this = this;
     _this.setData({
       inputValue: '',
-      chainShops: '',
+      restaurants: '',
       value: ''
     })
   },

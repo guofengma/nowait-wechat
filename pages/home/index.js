@@ -214,6 +214,9 @@ var app = Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    });
     var that = this;
     that.setData({
       "selectedBtn1": false,
@@ -253,7 +256,8 @@ var app = Page({
       fail: function () {
         console.log('獲取當前位置失敗')
       }
-    })
+    });
+    console.log('onLoad');
   },
 
   /**
@@ -262,13 +266,13 @@ var app = Page({
   onReady: function () {
     // 調用當前js文件中的login()方法
     this.login();
+    wx.hideLoading();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
