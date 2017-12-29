@@ -8,10 +8,8 @@
     </view>
       <text bindtap='toRests' class='search-text'>搜索</text> 
   </view>
-  <view wx:for="{{chainShops}}" wx:for-item="chainShop" wx:key="key" wx:for-index="i">
-    <view class='searchList' wx:for="{{chainShop.restaurants}}" wx:for-item="restaurant" wx:key="key" wx:for-index="j">
-      <view class='searchList-li' data-csid='{{i}}' data-restid='{{j}}' bindtap='showRestInfo'>{{restaurant.name}}</view>
-    </view>
+  <view class='searchList' wx:for="{{restaurants}}" wx:for-item="restaurant" wx:key="key" wx:for-index="j">
+    <view class='searchList-li' data-restid='{{j}}' bindtap='showRestInfo'>{{restaurant.name}}</view>
   </view>
 </view>
 <modal class="success-modal" title="{{title}}"  hidden="{{modalHidden}}" confirm-text="确定" no-cancel="true" bindconfirm="modalBindaconfirm" bindtap='closeTips'>{{tips}}</modal>

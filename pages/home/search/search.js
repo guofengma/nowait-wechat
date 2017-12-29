@@ -48,9 +48,8 @@ Page({
    * 顯示餐廳信息
    */
   showRestInfo: function (event) { 
-    var i = event.target.dataset.csid;  // 連鎖店列表下標
     var j = event.target.dataset.restid;  // 餐廳列表下標
-    var restaurant = JSON.stringify(this.data.chainShops[i].restaurants[j]);  // 獲取指定下標的餐廳對象，并將其轉換成string類型
+    var restaurant = JSON.stringify(this.data.restaurants[j]);  // 獲取指定下標的餐廳對象，并將其轉換成string類型
     // 跳轉至餐廳詳情頁面
     wx.navigateTo({
       url: "/pages/home/details/details?restaurant=" + restaurant,
@@ -63,12 +62,14 @@ Page({
   searchRest: function (event) {
     var that = this;
     var value = event.detail.value; // 關鍵字
+    if (value == '' || value == null)
+      value = ' ';
     that.setData({
       value: value
     })
     // 發起網絡請求，調用服務器中的接口獲取根據關鍵字查詢的餐廳連鎖店列表
     wx.request({
-      url: that.data.url + '/wechat-nowait/chainShop/showChainShopLikeName',
+      url: that.data.url + '/wechat-nowait/restaurant/showRestaurantLikeName',
       data: {
         name: value,  // 餐廳名稱
         longitude: that.data.longitude, // 當前位置經度
@@ -76,9 +77,8 @@ Page({
       },
       success: function (res) {
         that.setData({
-          chainShops: res.data  // 連鎖店列表
+          restaurants: res.data  // 連鎖店列表
         })
-        console.log(res)
       }
     })
   },
